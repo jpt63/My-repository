@@ -1,0 +1,7 @@
+#this is the requirements
+
+requests
+
+plotly
+
+pandas
