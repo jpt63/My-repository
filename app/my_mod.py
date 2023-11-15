@@ -1,3 +1,5 @@
+
+
 def enlarge(n):
     """ This is a docstring.
     This function enlarges a number.

@@ -69,3 +69,7 @@ Run tests:
 ```sh
 pytest
 ```
+
+### Web App
+# Mac OS:
+FLASK_APP=web_app flask run
