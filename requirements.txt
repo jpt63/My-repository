@@ -1,6 +1,11 @@
 
+# this is the "requirements.txt" file...
+
+
 
 requests
+
+#ImportError: Plotly express requires pandas to be installed.
 
 pandas
 
@@ -14,5 +19,12 @@ gunicorn
 
 
 
+
+pytest
+
+# using bsoup in testing the web app:
+beautifulsoup4 # <-- ADDITION
+
 # for testing:
 pytest
+
