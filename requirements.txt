@@ -1,17 +1,18 @@
-#this is the requirements
+
 
 requests
 
-plotly
-
 pandas
+
+plotly
 
 python-dotenv
 
-sendgrid==6.5.0
-
+# for web app:
 flask
+gunicorn
 
-# TEST
 
+
+# for testing:
 pytest
