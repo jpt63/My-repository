@@ -20,31 +20,30 @@ def test_client():
 def test_home(test_client):
     response = test_client.get("/")
     assert response.status_code == 200
-    #assert b"<h1>Welcome Home</h1>" in response.data
-    assert b"Welcome Home" in response.data
+    assert b"<h1>Welcome Home</h1>" in response.data
 
 
 def test_about(test_client):
     response = test_client.get("/about")
     assert response.status_code == 200
-    assert b"About Me" in response.data
+    assert b"<h1>About Me</h1>" in response.data
 
 
 def test_hello(test_client):
     response = test_client.get("/hello")
     assert response.status_code == 200
-    assert b"Hello, World!" in response.data
+    assert b"<h1>Hello, World!</h1>" in response.data
 
     # ... with url params
     response = test_client.get("/hello?name=MJR")
     assert response.status_code == 200
-    assert b"Hello, MJR!" in response.data
+    assert b"<h1>Hello, MJR!</h1>" in response.data
 
 
 def test_unemployment_dash(test_client):
     response = test_client.get("/unemployment/dashboard")
     assert response.status_code == 200
-    assert b"Unemployment Dashboard" in response.data
+    assert b"<h2>Unemployment Dashboard</h2>" in response.data
     assert b"Latest Rate: " in response.data
     # using beautifulsoup to parse the response
     soup = BeautifulSoup(response.data, features="html.parser")
@@ -59,7 +58,7 @@ def test_stocks_dash(test_client):
     #
     response = test_client.get("/stocks/dashboard")
     assert response.status_code == 200
-    assert b"Stocks Dashboard (NFLX)" in response.data
+    assert b"<h2>Stocks Dashboard (NFLX)</h2>" in response.data
     assert b"Latest Close: " in response.data
 
     #
@@ -67,5 +66,5 @@ def test_stocks_dash(test_client):
     #
     response = test_client.get("/stocks/dashboard?symbol=GOOGL")
     assert response.status_code == 200
-    assert b"Stocks Dashboard (GOOGL)" in response.data
+    assert b"<h2>Stocks Dashboard (GOOGL)</h2>" in response.data
     assert b"Latest Close: " in response.data
