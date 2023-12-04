@@ -35,7 +35,7 @@ def send_email(recipient_address=SENDER_ADDRESS, subject="[Shopping Cart App] Te
     except Exception as err:
         print(type(err))
         print(err)
-
+    return response.status_code
 
 
 
