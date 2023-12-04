@@ -18,9 +18,7 @@ flask
 gunicorn
 
 
-
-
-pytest
+sendgrid==6.5.0
 
 # using bsoup in testing the web app:
 beautifulsoup4 # <-- ADDITION
